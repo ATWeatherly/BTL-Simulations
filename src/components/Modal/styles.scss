@@ -1,0 +1,49 @@
+.modal-container {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+
+  &.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-bgclose {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .modal {
+    position: relative;
+    background-color: white;
+    padding: 20px 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 5px -2px rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    line-height: 150%;
+
+    .modal-close {
+      position: absolute;
+      top: 2px;
+      right: 10px;
+      cursor: pointer;
+      color: black;
+      opacity: 0.75;
+      transition: opacity 0.1s;
+      font-size: 20px;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

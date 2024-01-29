@@ -1,0 +1,6 @@
+{
+  "name": "Fluorescence Tutorial",
+  "tutorial": true,
+  "desc": "Fluorescence spectroscopy is widely used in biochemistry to characterize the structure, chemical reactivity, and conformational changes of biological macromolecules. The Fluorescence Tutorial will walk users through some basics of measuring fluorescence.",
+  "icon": "icon.webp"
+}

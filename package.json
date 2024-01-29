@@ -1,0 +1,35 @@
+{
+  "name": "gt-btl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "gt-btl",
+  "author": "Kevin Zhao",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^2.1.5",
+    "chart.js": "^4.2.1",
+    "gatsby": "^5.0.0",
+    "gatsby-plugin-image": "^3.0.0",
+    "gatsby-plugin-manifest": "^5.0.0",
+    "gatsby-plugin-mdx": "^5.0.0",
+    "gatsby-plugin-sass": "^6.0.0",
+    "gatsby-plugin-sharp": "^5.0.0",
+    "gatsby-plugin-sitemap": "^6.0.0",
+    "gatsby-source-filesystem": "^5.0.0",
+    "gatsby-transformer-sharp": "^5.0.0",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.56.1",
+    "three": "^0.150.1"
+  }
+}

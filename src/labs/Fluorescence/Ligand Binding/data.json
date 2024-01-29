@@ -1,0 +1,5 @@
+{
+    "name": "Ligand Binding",
+    "desc": "Many biochemical processes work by the interaction of a small molecule (ligand) with a biological macromolecule (protein or nucleic acid). The degree to which the ligand binds to the biomolecule can be described by the binding constant. The goal of this experiment is to determine the binding constant for the binding interaction between the flavonoid Epigallocatechin Gallate (EGCG) and Bovine Serum Albumin (BSA).",
+    "icon": "icon.webp"
+}

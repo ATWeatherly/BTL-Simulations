@@ -1,0 +1,228 @@
+@import "../../styles/vars";
+
+#options {
+  overflow: hidden;
+  flex-direction: column;
+
+  &.show {
+    display: flex !important;
+  }
+
+  .options-container {
+    padding: 0 50px;
+    width: 100%;
+    margin-left: -50px;
+    margin-top: 25px;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .opt-sec {
+    margin-bottom: 25px;
+
+    h2 {
+      margin: 0;
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+
+    .opts {
+      margin-top: 5px;
+
+      .opt {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 55px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+
+        h3 {
+          font-size: 1.25em;
+          font-weight: 500;
+          margin: 0;
+          margin-right: 50px;
+        }
+
+        button {
+          height: 100%;
+          width: 200px;
+          border: 0;
+          background-color: rgba(0, 0, 0, 0.05);
+          font-size: 1.25em;
+          font-weight: 500;
+          cursor: pointer;
+          transition: 0.1s;
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+
+          &:focus {
+            outline: 2px solid rgba(0, 0, 0, 0.75);
+
+            &:not(:focus-visible) {
+              outline: 0;
+            }
+          }
+
+          &.change {
+            border: 2px solid #FAFAFA;
+            border-radius: 5px;
+            animation: flash 0.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+          }
+
+          @keyframes flash {
+            from {
+              background-color: rgba(0, 0, 0, 0.1);
+            }
+            to {
+              background-color: rgba(0, 0, 0, 0.2);
+            }
+          }
+        }
+
+        .opt-num {
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          padding: 10px;
+          background: rgba(255, 255, 255, 0.5);
+          font-size: 1em;
+          font-weight: 500;
+          border-radius: 5px;
+          outline: 0;
+          margin-left: 5px;
+          width: 2em;
+
+          &::-webkit-inner-spin-button {
+            display: none;
+          }
+
+          &:focus {
+            border-color: rgba(0, 0, 0, 0.75);
+          }
+        }
+      }
+    }
+  }
+}
+
+.slider-container {
+  $ht: 10px;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  
+  .slider-bg {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    height: $ht;
+    width: calc(200px - 1.8 * $ht);
+    margin-left: calc(1.8 * $ht / 2);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  }
+
+  .slider-bar {
+    display: block;
+    position: absolute;
+    height: $ht;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .slider {
+    height: $ht;
+    width: 200px;
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    outline: 0;
+    z-index: 10;
+
+    &:focus {
+      outline: 2px solid rgba(black, 0.75);
+      outline-offset: 5px;
+
+      &:not(:focus-visible) {
+        outline: 0;
+      }
+    }
+
+    &::-webkit-slider-thumb {
+      width: calc($ht * 1.8);
+      appearance: none;
+      height: calc($ht * 1.4);
+      background: #FAFAFA;
+      border-radius: $ht;
+      position: relative;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
+  }
+}
+
+.switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+
+  input {
+    opacity: 0;
+
+    &:checked + .slider {
+      background-color: $gt_gold_light;
+    }
+
+    &:focus + .slider {
+      outline: 2px solid rgba(0, 0, 0, 0.75);
+      outline-offset: 3px;
+    }
+
+    &:not(:focus-visible) + .slider {
+      outline: 0;
+    }
+
+    &:checked + .slider:before {
+      transform: translateX(25px);
+    }
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: background-color 0.4s;
+    border-radius: 1000px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 19px;
+      width: 19px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: transform 0.4s;
+      border-radius: 1000px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1699px) {
+  #options .options-container {
+    padding: 0 35px;
+    margin-left: -35px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #options .options-container {
+    padding: 0 25px;
+    margin-left: -25px;
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Myoglobin Secondary Structure",
+    "desc": "Myoglobin is an oxygen-transport protein with a well-characterized 3D structure. The goal of this experiment is to generate CD data that may be deconvoluted using freeware to estimate the secondary structure composition of myoglobin.",
+    "icon": "icon.webp",
+    "external": true,
+    "url": "https://lambda-cd1.chemistry.gatech.edu/"
+}

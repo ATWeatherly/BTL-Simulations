@@ -1,0 +1,42 @@
+{
+  "categories": {
+    "Getting Started": [
+      9
+    ],
+    "Fluorescence Spectroscopy": [
+      1, 2, 3, 4
+    ],
+    "Circular Dichroism": [
+      5, 6, 7, 8
+    ]
+  },
+  "index": {
+    "1": {
+      "src": "Fluorescence/Fluorescence Tutorial"
+    },
+    "2": {
+      "src": "Fluorescence/Ligand Binding"
+    },
+    "3": {
+      "src": "Fluorescence/Protein Unfolding"
+    },
+    "4": {
+      "src": "Fluorescence/Fluorescence WIP"
+    },
+    "5": {
+      "src": "CD/CD Tutorial"
+    },
+    "6": {
+      "src": "CD/Myoglobin SS"
+    },
+    "7": {
+      "src": "CD/CD WIP"
+    },
+    "8": {
+      "src": "CD/CD WIP2"
+    },
+    "9": {
+      "src": "Application Tutorial"
+    }
+  }
+}

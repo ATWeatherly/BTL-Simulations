@@ -1,0 +1,84 @@
+#notifications {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 15px;
+
+  .notif {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 300px;
+    padding: 15px 25px;
+    font-weight: 500;
+    transition: 0.5s;
+    margin-bottom: 15px;
+    opacity: 1;
+    transform: translateX(0);
+    animation: fadein 0.25s;
+    border-left: 5px solid white;
+    
+    &.hide {
+      opacity: 0;
+      transform: translateX(-250px);
+    }
+
+    &.error {
+      border-color: hsl(355, 75%, 55%);
+    }
+
+    &.info {
+      border-color: hsl(210, 100%, 55%);
+    }
+
+    @keyframes fadein {
+      from {
+        transform: translateX(-250px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  #notif-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #notif-popup {
+      padding: 25px;
+      background: white;
+      border-radius: 10px;
+      max-width: 400px;
+      font-size: 1.25em;
+      line-height: 125%;
+
+      h2 {
+        margin: 0;
+        margin-bottom: 15px;
+      }
+
+      .continue {
+        background: transparent;
+        border: none;
+        outline: 0;
+        color: gray;
+        font-size: 0.8em;
+        margin: 10px 0 0 0;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,249 @@
+#env {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  &:before, &:after {
+    content: "";
+    display: block;
+    background-color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+  }
+
+  &::before {
+    height: 2px;
+    width: 20px;
+    left: -9px;
+  }
+
+  &:after {
+    height: 20px;
+    width: 2px;
+    top: -9px;
+  }
+}
+#overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  
+  &.show{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #pause {
+    display: none;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &.show {
+      display: flex;
+    }
+
+    h1 {
+      color: white;
+      font-weight: 200;
+      font-size: 8em;
+      margin: 0;
+      margin-bottom: 50px;
+    }
+
+    #pause-btns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      button, a {
+        color: white;
+        font-size: 2em;
+        font-weight: 300;
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+        outline: none;
+        padding: 15px 25px;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: font-weight 0.2s;
+
+        &:hover {
+          font-weight: 600;
+        }
+
+        &:focus {
+          font-weight: 600;
+  
+          &:not(:focus-visible) {
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+
+  .popup {
+    display: none;
+    position: relative;
+    width: 1000px;
+    height: 700px;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+  
+    &.show {
+      display: block;
+    }
+  
+    h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2em;
+    }
+  
+    #close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      transition: transform 0.2s;
+  
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.sidebtn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  height: 80px;
+  width: 80px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 0 0 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+
+  &.hide {
+    display: none;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    transition: 0.5s;
+  }
+}
+
+#loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s;
+
+  &.hide {
+    opacity: 0;
+  }
+
+  &.done {
+    display: none;
+  }
+
+  h1 {
+    color: white;
+    margin: 0;
+    margin-bottom: 1em;
+  }
+
+  .spinner {
+    $thickness: 6px;
+    width: 100px;
+    height: 100px;
+
+    &:after {
+      content: "";
+      display: block;
+      width: calc(100% - 2 * $thickness);
+      height: calc(100% - 2 * $thickness);
+      border-radius: 50%;
+      border: $thickness solid;
+      border-color: white transparent white transparent;
+      animation: spin 1.0s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1699px) {
+  #overlay {
+    .popup {
+      height: calc(80% - 70px);
+      width: calc(70% - 70px);
+      padding: 35px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #overlay {
+    .popup {
+      height: calc(90% - 50px);
+      width: calc(80% - 50px);
+      padding: 25px;
+      // padding: 15px;
+    }
+    
+    #pause #pause-btns button {
+      margin: 0;
+    }
+  }
+}
+

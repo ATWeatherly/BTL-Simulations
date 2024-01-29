@@ -1,0 +1,6 @@
+{
+    "name": "Circular Dichroism Tutorial",
+    "tutorial": true,
+    "desc": "Circular dichroism is a physical phenomenon in which achiral molecules absorb left vs. right circularly polarized light differently. The difference in the absorbance is called circular dichroism (CD). CD spectroscopy is widely used in biochemistry to characterize the secondary structure and conformational changes in biological macromolecules. The Circular Dichroism Tutorial will walk used through some basics of measuring CD.",
+    "icon": "icon.webp"
+}

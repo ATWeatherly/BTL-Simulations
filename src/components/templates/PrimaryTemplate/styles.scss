@@ -1,0 +1,95 @@
+@import "../../../styles/vars";
+
+body {
+  background: linear-gradient(to bottom right, white, #F0F8FF), white;
+}
+
+#wrapper {
+  min-height: calc(100vh - $header_height - $footer_height);
+  padding-top: $header_height;
+
+  &.no-footer {
+    main {
+      min-height: calc(100vh - 100px);
+    }
+
+    #footer {
+      display: none;
+    }
+  }
+  
+  main {
+    min-height: calc(100vh - $header_height - $footer_height);
+
+    &:not(.unlock) {
+      position: relative;
+    }
+    
+    &.no-pad {
+      padding: 0;
+    }
+
+    #blob1, #blob2 {
+      position: fixed;
+      height: 330px;
+      z-index: -1;
+    }
+
+    #blob1 {
+      top: 220px;
+      left: calc(50% + 200px);
+    }
+    #blob2 {
+      top: 570px;
+      left: calc(50% - 700px);
+    }
+    
+  }
+  
+  main, .pad-sides {
+    padding: $pad_sides_xl;
+  }
+
+  .fill-width {
+    width: calc(100% - 2 * $pad_single_xl);
+  }
+
+  &.side {
+    padding: 0;
+
+    main {
+      min-height: 100vh;
+      padding: 1px calc($pad_single_xl - $header_width / 2) 0 calc($pad_single_xl + $header_width / 2);
+      margin-top: -1px;
+
+      &.no-pad {
+        padding: 0;
+        padding-left: $header_width;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 2999px) {
+  #wrapper {
+    main, .pad-sides {
+      padding: $pad_sides_xxl;
+    }
+  }
+}
+
+@media only screen and (max-width: 1699px) {
+  #wrapper {
+    main, .pad-sides {
+      padding: $pad_sides_lg;
+    }
+  }
+}
+
+@media only screen and (max-width: 1299px) {
+  #wrapper {
+    main, .pad-sides {
+      padding: $pad_sides_md;
+    }
+  }
+}

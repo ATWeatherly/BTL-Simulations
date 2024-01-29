@@ -1,0 +1,28 @@
+$c_light: #F5F5F5;
+// $c_light: #918cb7;
+
+$gt_gold: #B3A369;
+$gt_gold_dk: #948757;
+$gt_navy: #003057;
+$gt_navy_dk: #012543;
+$gt_gold_light: #ecd273;
+$gt_navy_light: #74b4ec;
+
+$font_primary: 'Quicksand', sans-serif;
+
+$header_width: 100px;
+
+$pad_single_xxl: calc(50% - 1000px);
+$pad_single_xl: calc(50% - 800px);
+$pad_single_lg: calc(50% - 600px);
+$pad_single_md: calc(50% - 500px);
+// $pad_single_lg: 100px;
+// $pad_single_md: 5vw;
+
+$pad_sides_xxl: 0 $pad_single_xxl;
+$pad_sides_xl: 0 $pad_single_xl;
+$pad_sides_lg: 0 $pad_single_lg;
+$pad_sides_md: 0 $pad_single_md;
+
+$header_height: 120px;
+$footer_height: 50px;
